@@ -8,15 +8,15 @@ app.use(cors({
 
 app.use(express.json())
 
-let inputs=[{id:'1',name:'Britney',lastName:'Spears',age:'20'}]
+
 
 app.post('/registration', (req, res) => {
     console.log(req.body);
     if (!req.body) {
         return sendStatus(400).json({ message: 'try again' })
     }
-    inputs=[req.body,...inputs]
-    return res.json(inputs)
+  
+    return res.json(req.body)
 
 
 })
